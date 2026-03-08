@@ -7,7 +7,13 @@
   --neutral-200: #efefef;
   --neutral-100: #f5f5f5;
   --neutral-0: #ffffff;
-  --gradient-1: linear-gradient(180deg, #000000 0%, #00000066 100%);
+  --gradient-1: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.14) 42%,
+    rgba(0, 0, 0, 0.58) 74%,
+    rgba(0, 0, 0, 0.86) 100%
+  );
   --gradient-2: linear-gradient(225deg, #63afdb 0%, #6028f1 100%);
   --gradient-3: linear-gradient(225deg, #65ffeb 0%, #27718a 100%);
   --gradient-4: linear-gradient(45deg, #d3205a 0%, #ff5a5a 100%);

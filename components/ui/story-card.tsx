@@ -42,14 +42,13 @@ export function StoryCard({
         className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
       />
 
-      <div className="absolute inset-0 bg-black/16 transition-colors duration-300 group-hover:bg-black/10" />
+      {/* <div className="absolute inset-0 bg-black/16 transition-colors duration-300 group-hover:bg-black/10" /> */}
 
       <div
         aria-hidden="true"
         className="absolute inset-0"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.14) 42%, rgba(0, 0, 0, 0.58) 74%, rgba(0, 0, 0, 0.86) 100%)",
+          background: "var(--gradient-1)",
         }}
       />
 
