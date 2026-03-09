@@ -72,7 +72,7 @@
   --photosnap-space-800: 64px;
   --photosnap-space-1000: 80px;
   --photosnap-space-1400: 112px;
-  --background: var(--neutral-100);
+  --background: var(--neutral-950);
   --foreground: var(--neutral-950);
 }
 
@@ -405,7 +405,7 @@ body {
 
 .button-primary {
   justify-content: center;
-  padding: var(--photosnap-space-200) var(--photosnap-space-300);
+  padding: var(--photosnap-space-150) var(--photosnap-space-300);
   color: var(--neutral-0);
   background: var(--neutral-950);
   text-decoration: none;

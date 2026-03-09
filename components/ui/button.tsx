@@ -6,7 +6,7 @@ import { ArrowIcon } from "./arrow-icon";
 type ClassValue = string | false | null | undefined;
 
 const buttonBaseClassName =
-  "group inline-flex w-fit items-center gap-[var(--photosnap-space-200)] text-left text-[length:var(--text-preset-5-bold-size)] font-bold leading-[var(--text-preset-5-bold-line-height)] tracking-[var(--text-preset-5-bold-letter-spacing)] uppercase focus-visible:outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50";
+  "group inline-flex text-preset-7 w-fit items-center gap-[var(--photosnap-space-200)] text-left text-[length:var(--text-preset-5-bold-size)] font-bold leading-[var(--text-preset-5-bold-line-height)] tracking-[var(--text-preset-5-bold-letter-spacing)] uppercase focus-visible:outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50";
 
 export const buttonVariants = {
   link: "button-link",

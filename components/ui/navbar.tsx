@@ -63,7 +63,7 @@ export function Navbar({
     >
       <nav
         aria-label="Primary"
-        className="mx-auto flex w-full max-w-360 flex-col px-6 sm:px-10 lg:px-16"
+        className="mx-auto flex w-full max-w-320 flex-col px-6 sm:px-10 lg:px-16"
       >
         <div className="grid min-h-18 grid-cols-[1fr_auto] items-center gap-6 py-4 md:min-h-20 md:grid-cols-[1fr_auto_1fr] md:gap-8 md:py-0">
           <Link
