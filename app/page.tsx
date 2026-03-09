@@ -3,8 +3,8 @@ import { StoryCard } from "@/components/ui/story-card";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-100 px-6 py-16 text-neutral-950 sm:px-10 lg:px-16">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 lg:gap-10">
+    <main className="bg-neutral-100 text-neutral-950">
+      <div className="mx-auto flex min-h-[calc(100vh-4.5rem)] w-full max-w-6xl flex-col gap-8 px-6 pb-16 pt-8 sm:px-10 sm:pt-10 md:min-h-[calc(100vh-5rem)] lg:gap-10 lg:px-16 lg:pb-20 lg:pt-12">
         <section className="grid gap-8 rounded-[2rem] border border-neutral-300 bg-neutral-0 p-6 shadow-sm sm:p-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,360px)] lg:items-center lg:gap-10 lg:p-10">
           <div className="max-w-2xl">
             <p className="text-preset-7 text-neutral-950/60">
