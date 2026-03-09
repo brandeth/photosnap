@@ -5,7 +5,7 @@ import { ArrowIcon } from "./arrow-icon";
 
 export type StoryCardProps = {
   author: string;
-  date: string;
+  date?: string;
   image: StaticImageData | string;
   title: string;
   href?: string;
@@ -60,7 +60,9 @@ export function StoryCard({
 
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col gap-(--photosnap-space-300) p-(--photosnap-space-300) sm:p-(--photosnap-space-400)">
         <div className="max-w-full">
-          <p className="text-preset-6 text-neutral-0/90">{date}</p>
+          {date ? (
+            <p className="text-preset-6 text-neutral-0/90">{date}</p>
+          ) : null}
           <h3 className="mt-(--photosnap-space-050) text-preset-4 text-neutral-0">
             {title}
           </h3>

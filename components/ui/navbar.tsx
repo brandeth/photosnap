@@ -57,7 +57,7 @@ export function Navbar({
   return (
     <header
       className={joinClassNames(
-        "border-b border-neutral-300 bg-neutral-0 text-neutral-950",
+        "shadow-sm bg-neutral-0 text-neutral-950",
         className,
       )}
     >

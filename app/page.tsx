@@ -1,6 +1,62 @@
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
+import { FeatureItem } from "@/components/ui/feature-item";
+import { StoryCard } from "@/components/ui/story-card";
+
+const homeStories = [
+  {
+    title: "The Mountains",
+    author: "John Appleseed",
+    image: "/images/the-mountains.jpg",
+    alt: "Snow-covered mountain range beneath a cloudy sky",
+  },
+  {
+    title: "Sunset Cityscapes",
+    author: "Benjamin Cruz",
+    image: "/images/sunset-cityscapes.jpg",
+    alt: "City skyline at sunset with warm orange light",
+  },
+  {
+    title: "18 Days Voyage",
+    author: "Alexei Borodin",
+    image: "/images/18-days-voyage.jpg",
+    alt: "Person standing near a calm body of water during a voyage",
+  },
+  {
+    title: "Architecturals",
+    author: "Samantha Brooke",
+    image: "/images/architecturals.jpg",
+    alt: "Modern architectural structure captured from below",
+  },
+] as const;
+
+const homeFeatures = [
+  {
+    title: "100% Responsive",
+    description:
+      "No matter which the device you're on, our site is fully responsive and stories look beautiful on any screen.",
+    icon: "/responsiveness-icon.svg",
+    iconWidth: 72,
+    iconHeight: 72,
+  },
+  {
+    title: "No Photo Upload Limit",
+    description:
+      "Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go.",
+    icon: "/upload-limit.svg",
+    iconWidth: 72,
+    iconHeight: 36,
+  },
+  {
+    title: "Available to Embed",
+    description:
+      "Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more.",
+    icon: "/embedding.svg",
+    iconWidth: 71,
+    iconHeight: 72,
+  },
+] as const;
 
 export default function Home() {
   return (
@@ -110,6 +166,36 @@ export default function Home() {
             sizes="(min-width: 1280px) calc(100vw - 610px), (min-width: 768px) 57.64vw, 100vw"
             className="object-cover"
           />
+        </div>
+      </section>
+
+      <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
+        {homeStories.map((story, index) => (
+          <StoryCard
+            key={story.title}
+            title={story.title}
+            author={story.author}
+            image={story.image}
+            alt={story.alt}
+            href="/stories"
+            priority={index < 2}
+            className="max-w-none"
+          />
+        ))}
+      </section>
+
+      <section className="bg-neutral-0 px-8 py-20 sm:px-10 sm:py-28 lg:px-16 lg:py-36">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-3 md:items-start lg:gap-x-12">
+          {homeFeatures.map((feature) => (
+            <FeatureItem
+              key={feature.title}
+              title={feature.title}
+              description={feature.description}
+              icon={feature.icon}
+              iconWidth={feature.iconWidth}
+              iconHeight={feature.iconHeight}
+            />
+          ))}
         </div>
       </section>
     </main>
