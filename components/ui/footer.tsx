@@ -100,7 +100,10 @@ export function Footer() {
           </ul>
         </div>
 
-        <nav aria-label="Footer" className="md:justify-self-start">
+        <nav
+          aria-label="Footer"
+          className="md:justify-self-start sm:mb-0 mb-16"
+        >
           <ul className="flex flex-col items-center gap-5 md:items-start md:gap-3">
             {footerLinks.map((link) => (
               <li key={link.label}>

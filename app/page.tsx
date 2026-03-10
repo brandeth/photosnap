@@ -1,7 +1,9 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 
-import { Button } from "@/components/ui/button";
 import { FeatureItem } from "@/components/ui/feature-item";
+import { HomeHeroSection } from "@/components/ui/home-hero-section";
+import { SplitMarketingSection } from "@/components/ui/split-marketing-section";
 import { StoryCard } from "@/components/ui/story-card";
 
 const homeStories = [
@@ -58,116 +60,129 @@ const homeFeatures = [
   },
 ] as const;
 
-export default function Home() {
-  return (
-    <main className="bg-neutral-100 text-neutral-950">
-      <section className="grid bg-neutral-950 md:min-h-[40.625rem] md:grid-cols-[minmax(0,42.36%)_minmax(0,57.64%)] xl:grid-cols-[610px_minmax(0,1fr)]">
-        <div className="relative order-2 flex overflow-hidden bg-neutral-950 text-neutral-0 md:order-1">
-          <div className="mx-auto flex w-full max-w-3xl items-center px-6 py-18 sm:px-10 sm:py-24 lg:px-16 lg:py-28 xl:px-20">
-            <div className="relative max-w-xl mx-auto">
-              <div
-                aria-hidden="true"
-                className="absolute left-0 top-0 hidden h-full w-1.5 md:block md:-translate-x-10 lg:-translate-x-16 xl:-translate-x-20"
-                style={{ background: "var(--gradient-6)" }}
-              />
-              <div
-                aria-hidden="true"
-                className="mb-8 h-1.5 w-32 md:hidden"
-                style={{ background: "var(--gradient-6)" }}
-              />
-              <h1 className="mt-2 text-preset-1 uppercase sm:text-preset-1">
-                Create And <br /> Share Your Photo Stories.
-              </h1>
-              <p className="mt-5 max-w-lg text-preset-5-regular text-neutral-0/75 sm:mt-6">
-                Photosnap is a platform for photographers and visual
-                storytellers. We make it easy to share photos, tell <br />{" "}
-                stories and connect with others.
-              </p>
-              <div className="mt-8 sm:mt-10">
-                <Button href="/get-an-invite" tone="light">
-                  Get An Invite
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
+type HomeMarketingSection = {
+  id: string;
+  title: ReactNode;
+  description: ReactNode;
+  ctaHref: string;
+  ctaLabel: string;
+  media: ReactNode;
+  mediaPosition?: "start" | "end";
+  sectionClassName: string;
+  mediaClassName: string;
+};
 
-        <div className="relative order-1 min-h-72 overflow-hidden sm:min-h-96 md:order-2 md:min-h-full">
+const homeMarketingSections: HomeMarketingSection[] = [
+  {
+    id: "beautiful-stories",
+    title: (
+      <>
+        Beautiful <br /> Stories <br /> Every Time
+      </>
+    ),
+    description: (
+      <>
+        We provide design templates to ensure your stories <br /> look terrific.
+        Easily add photos, text, embed maps and <br /> media from other
+        networks. Then share your story with <br /> everyone.
+      </>
+    ),
+    ctaHref: "/stories",
+    ctaLabel: "View The Stories",
+    mediaPosition: "start",
+    sectionClassName:
+      "md:grid-cols-[273px_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_610px]",
+    mediaClassName:
+      "relative min-h-72 overflow-hidden sm:min-h-96 md:min-h-full",
+    media: (
+      <>
+        <Image
+          src="/images/landing-image-02.jpg"
+          alt="Workspace with a laptop, printed photos, and camera gear arranged for visual storytelling"
+          fill
+          sizes="(min-width: 1280px) calc(100vw - 610px), (min-width: 768px) 57.64vw, 100vw"
+          className="object-cover md:object-[35%_center] xl:object-cover"
+        />
+      </>
+    ),
+  },
+  {
+    id: "designed-for-everyone",
+    title: (
+      <>
+        Designed For <br /> Everyone
+      </>
+    ),
+    description: (
+      <>
+        Photosnap can help you create stories that resonate <br /> with your
+        audience. Our tool is designed for <br /> photographers of all levels,
+        brands, businesses you <br /> name it.
+      </>
+    ),
+    ctaHref: "/stories",
+    ctaLabel: "View The Stories",
+    mediaPosition: "end",
+    sectionClassName:
+      "md:grid-cols-[minmax(0,1fr)_273px] xl:grid-cols-[minmax(0,1fr)_830px]",
+    mediaClassName: "md:min-h-[37.5rem] xl:min-h-[37.5rem]",
+    media: (
+      <>
+        <div className="relative min-h-72 overflow-hidden sm:min-h-96 md:hidden">
           <Image
-            src="/images/landing-image-01.jpg"
-            alt="Photosnap landing page hero image"
+            src="/images/landing-image-03-mobile.jpg"
+            alt="Photographer reviewing landscape photos on a tablet in a scenic outdoor setting"
             fill
-            priority
-            sizes="(min-width: 1280px) calc(100vw - 610px), (min-width: 768px) 57.64vw, 100vw"
+            loading="eager"
+            sizes="(min-width: 768px) 0px, 100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-neutral-950/28 via-transparent to-transparent md:bg-none" />
         </div>
-      </section>
 
-      <section className="grid bg-neutral-0 md:min-h-[37.5rem] md:grid-cols-[minmax(0,57.64%)_minmax(0,42.36%)] xl:grid-cols-[minmax(0,1fr)_610px]">
-        <div className="relative min-h-72 overflow-hidden sm:min-h-96 md:min-h-full">
+        <div className="relative hidden min-h-[37.5rem] overflow-hidden md:block xl:hidden">
           <Image
-            src="/images/landing-image-02.jpg"
-            alt="Workspace with a laptop, printed photos, and camera gear arranged for visual storytelling"
+            src="/images/landing-image-03-tablet.jpg"
+            alt="Photographer reviewing landscape photos on a tablet in a scenic outdoor setting"
             fill
-            sizes="(min-width: 1280px) calc(100vw - 610px), (min-width: 768px) 57.64vw, 100vw"
+            loading="eager"
+            sizes="(min-width: 1280px) 0px, (min-width: 768px) 273px, 0px"
             className="object-cover"
           />
         </div>
 
-        <div className="flex bg-neutral-0">
-          <div className="mx-auto flex w-full max-w-3xl items-center px-6 py-18 sm:px-10 sm:py-24 lg:px-16 lg:py-28 xl:px-20">
-            <div className="max-w-xl mx-auto">
-              <h2 className="text-preset-1 uppercase sm:text-preset-1">
-                Beautiful <br /> Stories <br /> Every Time
-              </h2>
-              <p className="mt-5 max-w-lg text-preset-5-regular text-neutral-950/60 sm:mt-6">
-                We provide design templates to ensure your stories <br /> look
-                terrific. Easily add photos, text, embed maps and <br /> media
-                from other networks. Then share your story with <br /> everyone.
-              </p>
-              <div className="mt-8 sm:mt-10">
-                <Button href="/stories" tone="dark">
-                  View The Stories
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="grid bg-neutral-0 md:min-h-[37.5rem] md:grid-cols-[minmax(0,42.36%)_minmax(0,57.64%)] xl:grid-cols-[610px_minmax(0,1fr)]">
-        <div className="order-2 flex bg-neutral-0 md:order-1">
-          <div className="mx-auto flex w-full max-w-3xl items-center px-6 py-18 sm:px-10 sm:py-24 lg:px-16 lg:py-28 xl:px-20">
-            <div className="max-w-xl mx-auto">
-              <h2 className="text-preset-1 uppercase sm:text-preset-1">
-                Designed For <br /> Everyone
-              </h2>
-              <p className="mt-5 max-w-lg text-preset-5-regular text-neutral-950/60 sm:mt-6">
-                Photosnap can help you create stories that resonate <br /> with
-                your audience. Our tool is designed for <br /> photographers of
-                all levels, brands, businesses you <br /> name it.
-              </p>
-              <div className="mt-8 sm:mt-10">
-                <Button href="/stories" tone="dark">
-                  View The Stories
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative order-1 min-h-72 overflow-hidden sm:min-h-96 md:order-2 md:min-h-full">
+        <div className="relative hidden min-h-[37.5rem] overflow-hidden xl:block">
           <Image
             src="/images/landing-image-03.jpg"
             alt="Photographer reviewing landscape photos on a tablet in a scenic outdoor setting"
             fill
-            sizes="(min-width: 1280px) calc(100vw - 610px), (min-width: 768px) 57.64vw, 100vw"
+            loading="eager"
+            sizes="(min-width: 1280px) 830px, 0px"
             className="object-cover"
           />
         </div>
-      </section>
+      </>
+    ),
+  },
+];
+
+export default function Home() {
+  return (
+    <main className="bg-neutral-100 text-neutral-950">
+      <HomeHeroSection />
+
+      {homeMarketingSections.map((section) => (
+        <SplitMarketingSection
+          key={section.id}
+          title={section.title}
+          description={section.description}
+          ctaHref={section.ctaHref}
+          ctaLabel={section.ctaLabel}
+          media={section.media}
+          mediaPosition={section.mediaPosition}
+          sectionClassName={section.sectionClassName}
+          mediaClassName={section.mediaClassName}
+        />
+      ))}
 
       <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
         {homeStories.map((story, index) => (
@@ -185,7 +200,7 @@ export default function Home() {
       </section>
 
       <section className="bg-neutral-0 px-8 py-20 sm:px-10 sm:py-28 lg:px-16 lg:py-36">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-3 md:items-start lg:gap-x-12">
+        <div className="mx-auto grid max-w-sm grid-cols-1 justify-items-center gap-y-16 sm:max-w-md md:max-w-xl md:gap-y-20 xl:max-w-6xl xl:grid-cols-3 xl:items-start xl:gap-x-12 xl:gap-y-0">
           {homeFeatures.map((feature) => (
             <FeatureItem
               key={feature.title}

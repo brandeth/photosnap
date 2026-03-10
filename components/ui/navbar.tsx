@@ -107,43 +107,31 @@ export function Navbar({
             <span className="sr-only">
               {isMenuOpen ? "Close menu" : "Open menu"}
             </span>
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 20 20"
-              className="h-5 w-5"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {isMenuOpen ? (
+            {isMenuOpen ? (
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+                className="h-5 w-5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M4 4L16 16M16 4L4 16"
                   stroke="currentColor"
                   strokeWidth="1.75"
                   strokeLinecap="square"
                 />
-              ) : (
-                <>
-                  <path
-                    d="M3 6H17"
-                    stroke="currentColor"
-                    strokeWidth="1.75"
-                    strokeLinecap="square"
-                  />
-                  <path
-                    d="M3 10H17"
-                    stroke="currentColor"
-                    strokeWidth="1.75"
-                    strokeLinecap="square"
-                  />
-                  <path
-                    d="M3 14H17"
-                    stroke="currentColor"
-                    strokeWidth="1.75"
-                    strokeLinecap="square"
-                  />
-                </>
-              )}
-            </svg>
+              </svg>
+            ) : (
+              <Image
+                src="/hamburger-button.svg"
+                alt=""
+                aria-hidden="true"
+                width={20}
+                height={6}
+                className="h-auto w-5"
+              />
+            )}
           </button>
         </div>
 
