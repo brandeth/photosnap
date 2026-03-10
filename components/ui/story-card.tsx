@@ -11,7 +11,6 @@ export type StoryCardProps = {
   href?: string;
   alt?: string;
   className?: string;
-  priority?: boolean;
 };
 
 export function StoryCard({
@@ -21,7 +20,6 @@ export function StoryCard({
   date,
   href = "#",
   image,
-  priority = false,
   title,
 }: StoryCardProps) {
   return (
@@ -37,7 +35,6 @@ export function StoryCard({
         src={image}
         alt={alt ?? title}
         fill
-        priority={priority}
         sizes="(max-width: 768px) 100vw, 360px"
         className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
       />

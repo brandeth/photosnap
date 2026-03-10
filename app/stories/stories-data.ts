@@ -6,7 +6,6 @@ type StoryCardContent = {
   image: string;
   alt: string;
   href: string;
-  priority?: boolean;
 };
 
 export type FeaturedStoryContent = StoryCardContent & {
@@ -31,7 +30,6 @@ export const featuredStory: FeaturedStoryContent = {
   summary:
     'The dissected plateau area, while not actually made up of geological mountains, is popularly called "mountains," especially in eastern Kentucky and West Virginia, and while the ridges are not high, the terrain is extremely rugged.',
   ctaLabel: "Read The Story",
-  priority: true,
 };
 
 export const archiveStories: ArchiveStoryContent[] = [

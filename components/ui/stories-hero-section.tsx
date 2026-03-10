@@ -36,7 +36,6 @@ export function StoriesHeroSection({
           src={story.image}
           alt={story.alt}
           fill
-          priority={story.priority}
           sizes="(min-width: 768px) 100vw, 100vw"
           className="object-cover object-center"
         />
@@ -59,11 +58,11 @@ export function StoriesHeroSection({
               {story.eyebrow}
             </p>
 
-            <h1 className="mt-6 text-preset-2 uppercase sm:text-preset-1 max-w-81.5">
+            <h1 className="mt-6 text-preset-2 uppercase sm:text-preset-1 max-w-83">
               {story.title}
             </h1>
 
-            <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-preset-6 text-neutral-0/75 sm:mt-16">
+            <div className="mt-16 flex flex-wrap items-center gap-x-2 gap-y-1 text-preset-6 text-neutral-0/75 sm:mt-16">
               <p>{story.date}</p>
               <p className="text-neutral-0">by {story.author}</p>
             </div>

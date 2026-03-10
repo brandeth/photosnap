@@ -8,7 +8,7 @@ export default function StoriesPage() {
       <StoriesHeroSection />
 
       <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
-        {archiveStories.map((story, index) => (
+        {archiveStories.map((story) => (
           <StoryCard
             key={story.slug}
             title={story.title}
@@ -17,7 +17,6 @@ export default function StoriesPage() {
             image={story.image}
             alt={story.alt}
             href={story.href}
-            priority={index < 4}
             className="max-w-none"
           />
         ))}

@@ -185,7 +185,7 @@ export default function Home() {
       ))}
 
       <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
-        {homeStories.map((story, index) => (
+        {homeStories.map((story) => (
           <StoryCard
             key={story.title}
             title={story.title}
@@ -193,7 +193,6 @@ export default function Home() {
             image={story.image}
             alt={story.alt}
             href="/stories"
-            priority={index < 2}
             className="max-w-none"
           />
         ))}
