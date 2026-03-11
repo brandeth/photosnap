@@ -56,6 +56,7 @@ export default function PricingPage() {
             src={pricingHeroImage.src}
             alt={pricingHeroImage.alt}
             fill
+            placeholder="blur"
             priority
             sizes="(min-width: 1280px) calc(100vw - 610px), (min-width: 768px) 57.64vw, 100vw"
             className="object-cover"
@@ -78,6 +79,7 @@ export default function PricingPage() {
             src={betaBannerImage.src}
             alt={betaBannerImage.alt}
             fill
+            placeholder="blur"
             sizes="100vw"
             className="object-cover object-center"
           />
