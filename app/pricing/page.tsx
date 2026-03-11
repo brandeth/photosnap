@@ -3,16 +3,19 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PricingCompareTable } from "@/components/ui/pricing-compare-table";
 
+import betaBannerImageSrc from "../../public/images/beta-invite-image.jpg";
+import pricingHeroImageSrc from "../../public/images/pricing-image-01.jpg";
+
 import { pricingPlans } from "./pricing-data";
 import { PricingToggleDemo } from "./pricing-toggle-demo";
 
 const pricingHeroImage = {
-  src: "/images/pricing-image-01.jpg",
+  src: pricingHeroImageSrc,
   alt: "Photographer standing in a remote landscape with a camera, representing flexible plans for visual storytellers",
 } as const;
 
 const betaBannerImage = {
-  src: "/images/beta-invite-image.jpg",
+  src: betaBannerImageSrc,
   alt: "Scenic landscape backdrop for the beta invite banner",
 } as const;
 
