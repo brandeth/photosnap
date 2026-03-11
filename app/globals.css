@@ -454,3 +454,14 @@ body {
   outline: 2px solid currentColor;
   outline-offset: 4px;
 }
+
+.price-card__featured-cta {
+  color: var(--neutral-950);
+  background: var(--neutral-0);
+}
+
+.price-card__featured-cta:hover,
+.price-card__featured-cta:focus-visible {
+  color: var(--neutral-950);
+  background: var(--neutral-100);
+}

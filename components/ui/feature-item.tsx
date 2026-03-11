@@ -24,7 +24,8 @@ export function FeatureItem({
           aria-hidden="true"
           width={iconWidth}
           height={iconHeight}
-          className="h-auto w-auto"
+          style={{ width: iconWidth, height: iconHeight }}
+          unoptimized
         />
       </div>
 
