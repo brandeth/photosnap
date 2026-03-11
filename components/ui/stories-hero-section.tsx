@@ -36,6 +36,7 @@ export function StoriesHeroSection({
           src={story.image}
           alt={story.alt}
           fill
+          placeholder="blur"
           sizes="(min-width: 768px) 100vw, 100vw"
           className="object-cover object-center"
         />

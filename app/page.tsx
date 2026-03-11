@@ -1,6 +1,15 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
+import architecturalsImageSrc from "../public/images/architecturals.jpg";
+import daysVoyageImageSrc from "../public/images/18-days-voyage.jpg";
+import landingImage02Src from "../public/images/landing-image-02.jpg";
+import landingImage03DesktopSrc from "../public/images/landing-image-03.jpg";
+import landingImage03MobileSrc from "../public/images/landing-image-03-mobile.jpg";
+import landingImage03TabletSrc from "../public/images/landing-image-03-tablet.jpg";
+import sunsetCityscapesImageSrc from "../public/images/sunset-cityscapes.jpg";
+import theMountainsImageSrc from "../public/images/the-mountains.jpg";
+
 import { FeatureItem } from "@/components/ui/feature-item";
 import { HomeHeroSection } from "@/components/ui/home-hero-section";
 import { SplitMarketingSection } from "@/components/ui/split-marketing-section";
@@ -10,25 +19,25 @@ const homeStories = [
   {
     title: "The Mountains",
     author: "John Appleseed",
-    image: "/images/the-mountains.jpg",
+    image: theMountainsImageSrc,
     alt: "Snow-covered mountain range beneath a cloudy sky",
   },
   {
     title: "Sunset Cityscapes",
     author: "Benjamin Cruz",
-    image: "/images/sunset-cityscapes.jpg",
+    image: sunsetCityscapesImageSrc,
     alt: "City skyline at sunset with warm orange light",
   },
   {
     title: "18 Days Voyage",
     author: "Alexei Borodin",
-    image: "/images/18-days-voyage.jpg",
+    image: daysVoyageImageSrc,
     alt: "Person standing near a calm body of water during a voyage",
   },
   {
     title: "Architecturals",
     author: "Samantha Brooke",
-    image: "/images/architecturals.jpg",
+    image: architecturalsImageSrc,
     alt: "Modern architectural structure captured from below",
   },
 ] as const;
@@ -97,9 +106,10 @@ const homeMarketingSections: HomeMarketingSection[] = [
     media: (
       <>
         <Image
-          src="/images/landing-image-02.jpg"
+          src={landingImage02Src}
           alt="Workspace with a laptop, printed photos, and camera gear arranged for visual storytelling"
           fill
+          placeholder="blur"
           sizes="(min-width: 1280px) calc(100vw - 610px), (min-width: 768px) 57.64vw, 100vw"
           className="object-cover md:object-[35%_center] xl:object-cover"
         />
@@ -130,10 +140,11 @@ const homeMarketingSections: HomeMarketingSection[] = [
       <>
         <div className="relative min-h-72 overflow-hidden sm:min-h-96 md:hidden">
           <Image
-            src="/images/landing-image-03-mobile.jpg"
+            src={landingImage03MobileSrc}
             alt="Photographer reviewing landscape photos on a tablet in a scenic outdoor setting"
             fill
             loading="eager"
+            placeholder="blur"
             sizes="(min-width: 768px) 0px, 100vw"
             className="object-cover"
           />
@@ -141,10 +152,11 @@ const homeMarketingSections: HomeMarketingSection[] = [
 
         <div className="relative hidden min-h-[37.5rem] overflow-hidden md:block xl:hidden">
           <Image
-            src="/images/landing-image-03-tablet.jpg"
+            src={landingImage03TabletSrc}
             alt="Photographer reviewing landscape photos on a tablet in a scenic outdoor setting"
             fill
             loading="eager"
+            placeholder="blur"
             sizes="(min-width: 1280px) 0px, (min-width: 768px) 273px, 0px"
             className="object-cover"
           />
@@ -152,10 +164,11 @@ const homeMarketingSections: HomeMarketingSection[] = [
 
         <div className="relative hidden min-h-[37.5rem] overflow-hidden xl:block">
           <Image
-            src="/images/landing-image-03.jpg"
+            src={landingImage03DesktopSrc}
             alt="Photographer reviewing landscape photos on a tablet in a scenic outdoor setting"
             fill
             loading="eager"
+            placeholder="blur"
             sizes="(min-width: 1280px) 830px, 0px"
             className="object-cover"
           />

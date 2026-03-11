@@ -2,6 +2,13 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 
+import homeHeroImageSrc from "../../public/images/landing-image-01.jpg";
+
+const homeHeroImage = {
+  src: homeHeroImageSrc,
+  alt: "Photosnap landing page hero image",
+} as const;
+
 export function HomeHeroSection() {
   return (
     <section className="grid bg-neutral-950 md:min-h-[40.625rem] md:grid-cols-[minmax(0,1fr)_273px] xl:grid-cols-[610px_minmax(0,1fr)]">
@@ -37,9 +44,10 @@ export function HomeHeroSection() {
 
       <div className="relative order-1 min-h-[18.75rem] overflow-hidden sm:min-h-96 md:order-2 md:min-h-full">
         <Image
-          src="/images/landing-image-01.jpg"
-          alt="Photosnap landing page hero image"
+          src={homeHeroImage.src}
+          alt={homeHeroImage.alt}
           fill
+          placeholder="blur"
           priority
           sizes="(min-width: 1280px) calc(100vw - 610px), (min-width: 768px) 57.64vw, 100vw"
           className="object-cover"

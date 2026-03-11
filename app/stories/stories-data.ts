@@ -1,9 +1,29 @@
+import type { StaticImageData } from "next/image";
+
+import daysVoyageImage from "@/public/images/18-days-voyage.jpg";
+import architecturalsImage from "@/public/images/architecturals.jpg";
+import behindTheWavesImage from "@/public/images/behind-the-waves.jpg";
+import calmWatersImage from "@/public/images/calm-waters.jpg";
+import landOfDreamsImage from "@/public/images/land-of-dreams.jpg";
+import landingStoriesImage from "@/public/images/landing-stories-01.jpg";
+import nightAtTheDarkForestImage from "@/public/images/night-at-the-dark-forest.jpg";
+import rageOfTheSeaImage from "@/public/images/rage-of-the-sea.jpg";
+import runningFreeImage from "@/public/images/running-free.jpg";
+import somwarpetBeautyImage from "@/public/images/somewarpet-beauty.jpg";
+import sunsetCityscapesImage from "@/public/images/sunset-cityscapes.jpg";
+import theMilkyWayImage from "@/public/images/the-milky-way.jpg";
+import theMountainsImage from "@/public/images/the-mountains.jpg";
+import theTripToNowhereImage from "@/public/images/the-trip-to-nowhere.jpg";
+import unforseenCornersImage from "@/public/images/unforseen-corners.jpg";
+import worldTourImage from "@/public/images/world-tour-2019.jpg";
+import kingOfAfricaImage from "@/public/images/king-of-africa-part-2.jpg";
+
 type StoryCardContent = {
   slug: string;
   title: string;
   author: string;
   date: string;
-  image: string;
+  image: StaticImageData;
   alt: string;
   href: string;
 };
@@ -23,7 +43,7 @@ export const featuredStory: FeaturedStoryContent = {
   title: "Hazy Full Moon of Appalachia",
   author: "John Appleseed",
   date: "March 2nd 2020",
-  image: "/images/landing-stories-01.jpg",
+  image: landingStoriesImage,
   alt: "Full moon rising over a hazy mountain landscape at dusk",
   href: createStoryHref(),
   eyebrow: "Last Month's Featured Story",
@@ -38,7 +58,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "The Mountains",
     author: "John Appleseed",
     date: "April 16th 2020",
-    image: "/images/the-mountains.jpg",
+    image: theMountainsImage,
     alt: "Snow-covered mountain range beneath a cloudy sky",
     href: createStoryHref(),
   },
@@ -47,7 +67,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "Sunset Cityscapes",
     author: "Benjamin Cruz",
     date: "April 14th 2020",
-    image: "/images/sunset-cityscapes.jpg",
+    image: sunsetCityscapesImage,
     alt: "City skyline glowing under an orange sunset",
     href: createStoryHref(),
   },
@@ -56,7 +76,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "18 Days Voyage",
     author: "Alexei Borodin",
     date: "April 11th 2020",
-    image: "/images/18-days-voyage.jpg",
+    image: daysVoyageImage,
     alt: "Traveler standing near a calm shoreline during a long voyage",
     href: createStoryHref(),
   },
@@ -65,7 +85,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "Architecturals",
     author: "Samantha Brooke",
     date: "April 9th 2020",
-    image: "/images/architecturals.jpg",
+    image: architecturalsImage,
     alt: "Modern architectural structure photographed from below",
     href: createStoryHref(),
   },
@@ -74,7 +94,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "World Tour 2019",
     author: "Timothy Wagner",
     date: "April 7th 2020",
-    image: "/images/world-tour-2019.jpg",
+    image: worldTourImage,
     alt: "Open road stretching toward distant mountains during a world tour",
     href: createStoryHref(),
   },
@@ -83,7 +103,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "Unforeseen Corners",
     author: "William Malcolm",
     date: "April 3rd 2020",
-    image: "/images/unforseen-corners.jpg",
+    image: unforseenCornersImage,
     alt: "Urban corner scene with dramatic light and shadow",
     href: createStoryHref(),
   },
@@ -92,7 +112,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "King on Africa: Part II",
     author: "Tim Hillenburg",
     date: "March 29th 2020",
-    image: "/images/king-of-africa-part-2.jpg",
+    image: kingOfAfricaImage,
     alt: "Wildlife portrait captured during an African expedition",
     href: createStoryHref(),
   },
@@ -101,7 +121,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "The Trip to Nowhere",
     author: "Felicia Rourke",
     date: "March 21st 2020",
-    image: "/images/the-trip-to-nowhere.jpg",
+    image: theTripToNowhereImage,
     alt: "Remote travel landscape suggesting an isolated destination",
     href: createStoryHref(),
   },
@@ -110,7 +130,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "Rage of The Sea",
     author: "Mohammad Abdul",
     date: "March 19th 2020",
-    image: "/images/rage-of-the-sea.jpg",
+    image: rageOfTheSeaImage,
     alt: "Powerful ocean waves crashing under stormy skies",
     href: createStoryHref(),
   },
@@ -119,7 +139,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "Running Free",
     author: "Michelle",
     date: "March 16th 2020",
-    image: "/images/running-free.jpg",
+    image: runningFreeImage,
     alt: "Figure running through an open natural landscape",
     href: createStoryHref(),
   },
@@ -128,7 +148,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "Behind the Waves",
     author: "Lamarr Wilson",
     date: "March 11th 2020",
-    image: "/images/behind-the-waves.jpg",
+    image: behindTheWavesImage,
     alt: "Ocean waves seen from a low angle with the horizon beyond",
     href: createStoryHref(),
   },
@@ -137,7 +157,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "Calm Waters",
     author: "Samantha Brooke",
     date: "March 9th 2020",
-    image: "/images/calm-waters.jpg",
+    image: calmWatersImage,
     alt: "Still water reflecting a quiet natural scene",
     href: createStoryHref(),
   },
@@ -146,7 +166,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "The Milky Way",
     author: "Benjamin Cruz",
     date: "March 5th 2020",
-    image: "/images/the-milky-way.jpg",
+    image: theMilkyWayImage,
     alt: "Star-filled night sky showing the Milky Way above dark terrain",
     href: createStoryHref(),
   },
@@ -155,7 +175,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "Night at The Dark Forest",
     author: "Mohammad Abdul",
     date: "March 4th 2020",
-    image: "/images/night-at-the-dark-forest.jpg",
+    image: nightAtTheDarkForestImage,
     alt: "Dark forest at night illuminated by faint natural light",
     href: createStoryHref(),
   },
@@ -164,7 +184,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "Somwarpet's Beauty",
     author: "Michelle",
     date: "March 1st 2020",
-    image: "/images/somewarpet-beauty.jpg",
+    image: somwarpetBeautyImage,
     alt: "Lush landscape highlighting the beauty of Somwarpet",
     href: createStoryHref(),
   },
@@ -173,7 +193,7 @@ export const archiveStories: ArchiveStoryContent[] = [
     title: "Land of Dreams",
     author: "Tim Hillenburg",
     date: "February 25th 2020",
-    image: "/images/land-of-dreams.jpg",
+    image: landOfDreamsImage,
     alt: "Dreamlike landscape with soft light and expansive scenery",
     href: createStoryHref(),
   },

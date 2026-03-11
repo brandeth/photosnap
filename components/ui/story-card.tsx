@@ -22,6 +22,8 @@ export function StoryCard({
   image,
   title,
 }: StoryCardProps) {
+  const placeholder = typeof image === "string" ? "empty" : "blur";
+
   return (
     <article
       className={[
@@ -35,6 +37,7 @@ export function StoryCard({
         src={image}
         alt={alt ?? title}
         fill
+        placeholder={placeholder}
         sizes="(max-width: 768px) 100vw, 360px"
         className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
       />

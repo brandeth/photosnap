@@ -3,13 +3,16 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FeatureItem } from "@/components/ui/feature-item";
 
+import betaBannerImageSrc from "../../public/images/beta-invite-image.jpg";
+import featureHeroImageSrc from "../../public/images/features-image-01.jpg";
+
 const featureHeroImage = {
-  src: "/images/features-image-01.jpg",
+  src: featureHeroImageSrc,
   alt: "Creative desk setup with printed photos, a laptop, and camera gear arranged for visual storytelling",
 } as const;
 
 const betaBannerImage = {
-  src: "/images/beta-invite-image.jpg",
+  src: betaBannerImageSrc,
   alt: "Scenic landscape backdrop for the beta invite banner",
 } as const;
 
@@ -100,6 +103,7 @@ export default function FeaturesPage() {
             src={featureHeroImage.src}
             alt={featureHeroImage.alt}
             fill
+            placeholder="blur"
             priority
             sizes="(min-width: 1280px) calc(100vw - 610px), (min-width: 768px) 57.64vw, 100vw"
             className="object-cover"
@@ -129,6 +133,7 @@ export default function FeaturesPage() {
             src={betaBannerImage.src}
             alt={betaBannerImage.alt}
             fill
+            placeholder="blur"
             sizes="100vw"
             className="object-cover object-center"
           />
